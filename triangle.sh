@@ -7,7 +7,7 @@ read c
 
 if [ $(($b + $a)) -gt $c ] && [ $(($c + $a)) -gt $b ] && [ $(($b + $c)) -gt $a ]
 then
-    
+	echo "ok"
 else
 	echo "Triangulo Impossivel"
 fi
