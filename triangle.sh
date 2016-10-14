@@ -5,9 +5,18 @@ read b
 echo "Lado 3"
 read c
 
-if [ $(($b + $a)) -gt $c ] && [ $(($c + $a)) -gt $b ] && [ $(($b + $c)) -gt $a ]
+if [ $(($b + $a)) -ge $c ] && [ $(($c + $a)) -ge $b ] && [ $(($b + $c)) -ge $a ]
 then
-	echo "ok"
+    if [ $c -eq $a ] && [ $c -eq $b ]
+    then
+        #statements
+        echo "EQUILATERAL"
+    elif [ $c -eq $a ] || [ $c -eq $b ] || [ $b -eq $a ] 
+    then
+        echo "SCALENE"
+    else
+        echo "ISOSCELES"
+    fi
 else
-	echo "Triangulo Impossivel"
+    echo "Triangulo Impossivel"
 fi
